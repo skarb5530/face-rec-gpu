@@ -14,22 +14,26 @@ All the above steps should be in one function called process_image()
 """
 
 # TODO: Import OpenCV
-
+import numpy as np
+import cv2
 
 # TODO: Edit this function
 def process_image():
-    return
-
-# Just prints 'Hello World! to screen.
+    image = cv2.imread("geisel.jpg", 0)
+    x, y = image.shape
+    print(x, y)
+    cv2.rectangle(image, (150, 80), (250, 180), (255,255,255),3)
+    cv2.imshow("Gray", image)
+    cv2.waitKey(0)
+    cv2.imwrite("Output.jpg", image)
+#Juse wrintw wHell Worlt to scre
 def hello_world():
     print('Hello World!')
-    return
 
-# TODO: Call process_image function.
 def main():
     hello_world()
+    process_image()
     return
-
 
 if(__name__ == '__main__'):
     main()
